@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>
+            TP1 ATIVIDADE
+        </title>
+        <style p1>
+            p1{
+                color: crimson;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-size: 64px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <script>
+            //Dizer se o número é par ou impar.
+            num = prompt("Digite um número");
+            if(num % 2 == 0){
+                alert("O número é par.");
+            }else if(num == 0){
+                alert("O número é nulo.")
+            }else{
+                alert("O número é impar.");
+            }
+        </script>
+    
+        <script>
+            //Ler número e dizer o dia da semana.
+            dia = prompt("Digite o número do dia da semana");
+            switch(dia){
+                case '1':
+                    alert("Hoje é Domingo.");
+                    break;
+                case '2':
+                    alert("Hoje é Segunda-feira.");
+                    break;
+                case '3':
+                    alert("Hoje é Terça-feira.");
+                    break;
+                case '4':
+                    alert("Hoje é Quarta-feira.");
+                    break;
+                case '5':
+                    alert("Hoje é Quinta-feira.");
+                    break;
+                case '6':
+                    alert("Hoje é Sexta-feira.");
+                    break;
+                case '7':
+                    alert("Hoje é Sábado.")
+                    break;
+                default:
+                    alert("Número inválido.");
+                    break;
+            }
+        </script>
+    
+        <script>
+            //Dizer se o voto é proibido, obrigatório ou opcional.
+            idade = prompt("Digite Sua idade:");
+            if(idade < 16){
+                alert("Você não pode votar.");
+            }else if(idade >= 16 && idade < 18 || idade > 70){
+                alert("Você pode votar, porém seu voto é facultativo.");
+            }else{
+                alert("Você pode votar. Seu voto é obrigatório.");
+            }
+        </script>
+        <p1>   
+        [Exercício S.A.I.] Multiverso dos desvios condicionais <br>
+        </p1>
+    </body>
+    
+</html>
