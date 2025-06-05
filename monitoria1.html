@@ -1,6 +1,6 @@
 <html>
     <script>
-        opcao = prompt("O que você quer fazer?\n1.Exibir números de 1 a 10\n2.Tabuada\n3.Todos os Pares\n4. Número primo ou não\n5. Média artimetica\n6.Fibonacci");
+        opcao = prompt("O que você quer fazer?\n1.Exibir números de 1 a 10\n2.Tabuada\n3.Todos os Pares\n4. Número primo ou não\n5. Média artimetica\n6.Fibonacci\n7. Todos os Divisores\n8. Todos os impares\n9. Maior número\n10. positivos e negativos");
         function numeros(){
             //numeros de 1 a 10
             for(let i = 1; i < 11; i++){
@@ -48,22 +48,74 @@
             a = parseInt(prompt("Digite um número"));
             soma += a;
         }
+        alert(soma / n);
+        }
         function fibonacci(n){
-            if(n <= 1){
-                return n;
-            } else{
+            //fibonacci
+            if(n == 0 || n == 1){
+                return 1;
+            }else{
                 return fibonacci(n - 1) + fibonacci(n - 2);
             }
         }
         function mostrarFibonacci(n){
+            //mostrar fibonacci
             let resultado = ' ';
             for(let i = 0; i < n; i++){
                 resultado += fibonacci(i) + ' ';
             }
             alert(resultado);
-
         }
-        alert(soma / n);
+        function divisores(){
+            //todos os divisores de um numero
+            n = prompt("Digite um número: ");
+            alert("Divisores desse número:");
+            for(let i = 1; i <= n; i++){
+                if(n % i == 0){
+                    alert(i);
+                }
+            }
+        }
+        function impares(){
+            //numeros impares dentro de um numero
+            a = prompt("Digite um número");
+            for(let i = 1; i <= a; i++){
+                if(i % 2 != 0){
+                    alert(i);
+                }
+            }
+        }
+        function maior(){
+            //maior numero entre varios numeros
+            array = [];
+            let i = 0;
+            while(true){
+                i = prompt("Digite um número, digite um texto qualquer para parar: ");
+                if(Number.isNaN(parseInt(i))){
+                    break;
+                }else{
+                    array.push(i - 0);
+                }
+            }
+            array.sort((a, b) => b - a);
+            alert(array[0]);
+        }
+        function positivosNegativos(){
+            let i = 0;
+            let positivos = 0, negativos = 0;
+            while(true){
+                i = prompt("Digite um número, digite uma letra ou texto qualquer para parar: ");
+                if(Number.isNaN(parseInt(i))){
+                    break;
+                }else{
+                    if(parseInt(i) > 0){
+                        positivos++;
+                    }else{
+                        negativos++;
+                    }
+                }
+            }
+            alert(positivos + " positivos e " + negativos + " negativos");
         }
         
         switch(opcao){
@@ -83,11 +135,22 @@
                 media();
                 break;
             case '6':
-                n = prompt("Digite o número de termos");
-                fibonacci();
-                mostrarFibonacci();
+                n = parseInt(prompt("Digite o número de termos"));
+                mostrarFibonacci(n);
+                break;
+            case '7':
+                divisores();
+                break;
+            case '8':
+                impares();
+                break;
+            case '9':
+                maior();
+                break;
+            case '10':
+                positivosNegativos();
                 break;
         }
-    
+        
     </script>
 </html>
