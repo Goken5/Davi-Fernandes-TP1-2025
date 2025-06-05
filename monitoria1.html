@@ -1,0 +1,93 @@
+<html>
+    <script>
+        opcao = prompt("O que você quer fazer?\n1.Exibir números de 1 a 10\n2.Tabuada\n3.Todos os Pares\n4. Número primo ou não\n5. Média artimetica\n6.Fibonacci");
+        function numeros(){
+            //numeros de 1 a 10
+            for(let i = 1; i < 11; i++){
+            alert(i);
+            }
+        }
+        function tabuada(){
+            //tabuada
+            a = prompt("Digite um número");
+            alert("Tabuada desse número");
+            for(let i = 1; i < 11; i++){
+                alert(a + " x " + i + " = " + a*i);
+            }
+        }
+        function pares(){
+             //numeros pares
+            a = prompt("Digite um número");
+            for(let i = 1; i <= a; i++){
+                if(i % 2 == 0){
+                    alert(i);
+                }
+            }
+        }
+        function primo(){
+            //primo
+            a = prompt("Digite um número");
+            let éprimo = true;
+
+            for(let i = a - 1; i > 1; i--){
+                if(a % i == 0){
+                    éprimo = false;
+                }
+            }
+            if(éprimo){
+                alert(a + " é primo");
+            }else{
+                alert(a + " não é primo");
+            }
+        }
+        function media(){
+        //media
+        n = parseInt(prompt("Digite um valor"));
+        let soma = 0;
+        for(let i = 0; i < n; i++){
+            a = parseInt(prompt("Digite um número"));
+            soma += a;
+        }
+        function fibonacci(n){
+            if(n <= 1){
+                return n;
+            } else{
+                return fibonacci(n - 1) + fibonacci(n - 2);
+            }
+        }
+        function mostrarFibonacci(n){
+            let resultado = ' ';
+            for(let i = 0; i < n; i++){
+                resultado += fibonacci(i) + ' ';
+            }
+            alert(resultado);
+
+        }
+        alert(soma / n);
+        }
+        
+        switch(opcao){
+            case '1':
+                numeros();
+                break;
+            case '2':
+                tabuada();
+                break;
+            case '3':
+                pares();
+                break;
+            case '4':
+                primo();
+                break;
+            case '5':
+                media();
+                break;
+            case '6':
+                n = prompt("Digite o número de termos");
+                fibonacci();
+                mostrarFibonacci();
+                break;
+        }
+    
+    </script>
+</html>
