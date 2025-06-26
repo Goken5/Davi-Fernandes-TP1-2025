@@ -1,0 +1,40 @@
+<html>
+    <script>
+        //ordenar vetor 10 posições
+        let a = [];
+        for(let i = 0; i < 10; i++){
+            b = prompt("Digite um número");
+            a.push(b);
+        }
+        a.sort();
+        alert("seu vetor é: " + a);
+    </script>
+
+    <script>
+        //ler nome e idade de 7 pessoas e falar se pode ou não votar
+        let idades = [];
+        let nomes = [];
+        let pode = [];
+        let naopode = [];
+        let facultativo = [];
+        for(let i = 0; i < 7; i++){
+            nome = prompt("Digite um nome: ");
+            idade = prompt("Digite uma idade: ");
+            nomes.push(nome);
+            idades.push(idade);
+        }
+        for(let i = 0; i < 7; i++){
+            if(idades[i] < 16){
+                naopode.push(nomes[i]);
+            }else if(idades[i] >= 16 && idades[i] < 18 || idades[i] > 70){
+                facultativo.push(nomes[i]);
+            }else{
+                pode.push(nomes[i]);
+            }
+        }
+        alert("pode votar: " + pode);
+        alert("Não pode votar: " + naopode);
+        alert("Pode votar, mas tem voto facultativo: " + facultativo);
+    </script>
+
+</html>
