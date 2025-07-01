@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function soma(){
+            //Soma dos valores
+            let v = [];
+            for(let i = 0; i < 10; i++){
+                a = parseInt(prompt("Digite um número"));
+                v.push(a);
+            }
+            let soma = 0;
+            for(let i = 0; i < 10; i++){
+                soma += v[i];
+            }
+            alert("A soma dos números foi de: " + soma);
+        }
+        function maior(){
+             //Maior número
+            let array = [];
+            for(let i = 0; i < 5; i++){
+                a = parseInt(prompt("Digite um número"));
+                v.push(a);
+            }
+            array.sort(function(a, b){return a - b});
+            alert("O maior número que você digitou é " + array[0]);
+        }
+        function pares(){
+            //le quantos numeros pares tem
+            let array = [];
+            let contador = 0;
+            for(let i = 0; i < 10; i++){
+                a = parseInt(prompt("Digite um número"));
+                array.push(a);
+                if(a % 2 == 0){
+                    contador++;
+                }
+            }
+            alert("Nesse array tem " + contador + " números pares");
+        }
+        function media(){
+            //media aritmetica
+            let array = [];
+            let soma = 0;
+            for(let i = 0; i < 5; i++){
+                a = parseInt(prompt("Digite um número"));
+                array.push(a);
+                soma += a;
+            }
+            alert("A média aritmética é: " + (soma / 5));
+        }
+        function impares(){
+            let array = [];
+            let contador = 0;
+            for(let i = 0; i < 10; i++){
+                a = parseInt(prompt("Digite um número"));
+                array.push(a);
+                if(a % 2 != 0){
+                    contador++;
+                }
+            }
+            alert("Nesse array tem " + contador + " números impares");
+        }
+        function menor(){
+            let array = [];
+            let contador = 0;
+            for(let i = 0; i < 10; i++){
+                a = parseInt(prompt("Digite um número"));
+                array.push(a);
+            }
+            array.sort(function(a, b){return b - a});
+            alert("O menor número desse array é " + array[0]);
+        }
+        function ordenado(){
+            let array = [];
+            let ordenado = 1;
+            for(let i = 0; i < 7; i++){
+                a = parseInt(prompt("Digite um número"));
+                array.push(a);
+            }
+            for(let i = 0; i < 6; j++){
+                for(let j = 1; j < 7; j++){
+                    if(array[i] < array[j]){
+                    alert("Array desordenado");
+                    return;
+                    }
+                }
+            }
+            alert("Array ordenado");
+        }
+        function positivos(){
+            let array = [];
+            let positivos = [];
+            for(let i = 0; i < 8; i++){
+                a = parseInt(prompt("Digite um número"));
+                array.push(a);
+                if(a > 0){
+                    positivos.push(a);
+                }
+            }
+        }
+        
+        resposta = prompt("Digite o que você quer fazer\n1. soma dos valores\n2.maior numero do vetor\n3. quantos numeros pares tem no vetor\n4. media aritmetica do vetor\n5. quantos numeros impares tem no vetor\n6. menor numero do vetor\n7. verifica se o array está ordenado ou não\n8. mostra todos os numeros positivos do vetor");
+        switch(resposta){
+            case '1':
+                soma();
+            case '2':
+                maior();
+            case '3':
+                pares();
+            case '4':
+                media();
+            case '5':
+                impares();
+            case '6':
+                menor();
+            case '7':
+                ordenado();
+            case '8':
+                positivos();
+        }
+    </script>
+    
+
+</body>
+</html>
