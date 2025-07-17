@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regra de 3</title>
+    <style>
+        body{
+            background-color: rgb(25, 35, 36);
+        }
+        #titulo{
+            display: block;
+            font-size: 56px;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: white;
+            padding: 10px;
+            border-radius: 25vh;
+            width: fit-content
+        }
+        #regraDeTres{
+            margin: 28px;
+            width: fit-content;
+            display: block;
+            font-size: 24px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 25vh;
+        }
+        #mostrarX{
+            font-size: 18px;
+        }
+        input{
+            font-size: 18px;
+            border-radius: 25px;
+        }
+        #resultado{
+            display: none;
+            background-color: white;
+            padding: 10px;
+            margin: 28px;
+            padding: 10px;
+            width: fit-content;
+            border-radius: 25vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="titulo">Calculadora de Regras de 3</div>
+    <div id="regraDeTres">
+        <input type="number" name="a" id="a" placeholder="A"> ----- <input type="number" name="b" id="b" placeholder="B"> <br>
+        <input type="number" name="c" id="c" placeholder="C"> ----- x <br>
+        <input type="button" id="mostrarX" value="Calcular X" onclick="calculo()">
+    </div>
+        <div id="resultado"></div>
+    <script>
+        function calculo(){
+            resultadoDiv = document.getElementById('resultado');
+            a = parseFloat(document.getElementById('a').value);
+            b = parseFloat(document.getElementById('b').value);
+            c = parseFloat(document.getElementById('c').value);
+
+            x = (b * c) / a;
+            resultadoDiv.textContent = `Valor de X = ${x}`;
+            resultadoDiv.style.display = 'block';
+            
+        }
+    </script>
+</body>
+</html>
