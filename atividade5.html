@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade TP1</title>
+</head>
+<body>
+    <input type="number" name="a" id="a" placeholder="a"> <input type="number" name="b" id="b" placeholder="b"> <br>
+    <button id="soma">+</button> <button id="sub">-</button> <button id="multi">*</button> <button id="divi">/</button> <button id="limpar">limpar</button>
+    <p id="resultado"></p>
+    <script>
+        botaoSoma = document.getElementById('soma');
+        botaoSub = document.getElementById('sub');
+        botaoMulti = document.getElementById('multi');
+        botaoDivi = document.getElementById('divi');
+        resultadoP = document.getElementById('resultado');
+        botaoLimpar = document.getElementById('limpar');
+        
+        var resultado;
+        botaoSoma.onclick = () => {
+            a = parseFloat(document.getElementById('a').value);
+            b = parseFloat(document.getElementById('b').value);
+            resultado = a + b;
+            resultadoP.innerHTML = `Resultado = ${resultado}`
+        }
+        botaoSub.onclick = () => {
+            a = parseFloat(document.getElementById('a').value);
+            b = parseFloat(document.getElementById('b').value);
+            resultado = a - b;
+            resultadoP.innerHTML = `Resultado = ${resultado}`
+        }
+        botaoMulti.onclick = () => {
+            a = parseFloat(document.getElementById('a').value);
+            b = parseFloat(document.getElementById('b').value);
+            resultado = a * b;
+            resultadoP.innerHTML = `Resultado = ${resultado}`
+        }
+        botaoDivi.onclick = () => {
+            a = parseFloat(document.getElementById('a').value);
+            b = parseFloat(document.getElementById('b').value);
+            resultado = a / b;
+            resultadoP.innerHTML = `Resultado = ${resultado}`
+        }
+        botaoLimpar.onclick = () => {
+            document.getElementById('a').value = ''
+            document.getElementById('b').value = ''
+            resultadoP.innerHTML = '';
+        }
+        
+
+    </script>
+</body>
+</html>

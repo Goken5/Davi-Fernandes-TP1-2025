@@ -55,9 +55,9 @@
     <script>
         function calculo(){
             resultadoDiv = document.getElementById('resultado');
-            a = parseFloat(document.getElementById('a').value);
-            b = parseFloat(document.getElementById('b').value);
-            c = parseFloat(document.getElementById('c').value);
+            a = parseFloat(a.value)
+            b = parseFloat(b.value);
+            c = parseFloat(c.value);
 
             x = (b * c) / a;
             resultadoDiv.textContent = `Valor de X = ${x}`;
