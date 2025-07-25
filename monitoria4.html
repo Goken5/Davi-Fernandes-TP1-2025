@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="teste" style="font-size: 32px;">Mensagem de Teste</h1><br>
+    <input type="button" id="aumentar" value="Aumentar fonte" onclick="aumentarFonte()"> 
+    <input type="button" id="diminuir" value="Diminuir fonte" onclick="diminuirFonte()">
+
+    <script>    
+        fontSize = 32;
+        function aumentarFonte(){
+            fontSize += 2;
+            mensagem = document.getElementById('teste');
+            mensagem.style.fontSize = fontSize + 'px';
+        }
+        function diminuirFonte(){
+            fontSize -= 2;
+            mensagem = document.getElementById('teste');
+            mensagem.style.fontSize = fontSize + 'px';
+        }
+    </script>
+
+</body>
+</html>
