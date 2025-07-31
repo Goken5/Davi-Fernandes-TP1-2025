@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .mostra {
+            display: block;
+        }
+        .esconde {
+            display: none;
+        }
+    </style>
+    <ol>
+        <input type="button" name="botao" id="botao" value="Esconder tudo" onclick="mudaDisplay()">
+        <li onclick="mudaVisibilidade('listaTeste1')">Teste1</li>
+        <ul id="listaTeste1" class="mostra">
+            <li>bla</li>
+            <li>bla</li>
+            <li>bla</li>
+        </ul>
+        <li onclick="mudaVisibilidade('listaTeste2')">Teste2</li>
+        <ul id="listaTeste2" class="mostra">
+            <li>ble</li>
+            <li>ble</li>
+            <li>ble</li>
+        </ul>
+    </ol>
+
+    <script>
+        const lista1 = document.getElementById('listaTeste1');
+        const lista2 = document.getElementById('listaTeste2');
+        const botao = document.getElementById('botao');
+        let mostrando = true;
+
+        function mudaDisplay(){
+            if(mostrando){
+                lista1.className = "esconde";
+                lista2.className = "esconde";
+                mostrando = false;
+                botao.value = "Esconder tudo"
+            }
+            else{
+                lista1.className = "mostra";
+                lista2.className = "mostra";
+                mostrando = true;
+                botao.value = "Mostrar tudo";
+            }
+            
+        }
+        function mudaVisibilidade(elemento) {
+            const elementoHTML = document.getElementById(elemento);
+            if (elementoHTML.className == "mostra") {
+                elementoHTML.className = "esconde"
+            } else {
+                elementoHTML.className = "mostra"
+            }
+        }
+    </script>
+</body>
+</html>
