@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are the objects on a script just scenography?</title>
+</head>
+<body>
+    <label for="nome">Nome: </label>
+    <br>
+    <input type="text" id="nome">
+    <br>
+    <label for="idade">Idade: </label>
+    <br>
+    <input type="number" id="idade">
+    <br>
+    <label for="profissao">Profissão: </label>
+    <br>
+    <input type="text" id="profissao">
+    <br>
+    <input type="button" value="Mostrar Informações" onclick="exibirMensagem()">
+    
+    <script>
+        function exibirMensagem() {
+            let pessoa = {};
+            pessoa.nome = document.getElementById('nome').value;
+            pessoa.idade = document.getElementById('idade').value;
+            pessoa.profissao = document.getElementById('profissao').value;
+
+            let p = document.createElement('p');
+            p.innerHTML = `Nome: ${pessoa.nome}, Idade: ${pessoa.idade}, Profissão: ${pessoa.profissao}`;
+            document.body.appendChild(p);
+        }
+    </script>
+</body>
+</html>
