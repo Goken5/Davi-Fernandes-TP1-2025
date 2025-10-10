@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Nomes</title>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@1.7.0/dist/htmx.min.js"></script>
+    <style>
+        input, label {
+            margin: 5px;
+            display: block;
+        }
+        button{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cadastro de Nomes</h1>
+
+    <form hx-post="https://ola-tp1.onrender.com/nomes" hx-target="#resposta" hx-swap="outerHTML">
+        <label for="nome">Digite seu nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome aqui" required >
+        <button type="submit">Cadastrar Nome</button>
+    </form>
+
+    <div id="resposta" ></div>
+
+    
+    <button hx-get="https://ola-tp1.onrender.com/nomes" hx-target="#lista-nomes" hx-swap="outerHTML">Ver Nomes Cadastrados</button>
+
+    <div id="lista-nomes"></div>
+
+</body>
+</html>
