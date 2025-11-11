@@ -21,5 +21,6 @@ app.get('/saudacao/:nome', (req, res) => {
 
     res.send("Olá, " + req.params.nome)
 })
-console.log("Servidor Rodando na porta 3000")
-app.listen(3000)
+app.listen(3000, () => {
+    console.log("Servidor Rodando na porta 3000")
+})
