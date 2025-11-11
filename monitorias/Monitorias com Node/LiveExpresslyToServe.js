@@ -17,9 +17,9 @@ app.get('/hora', (req, res) => {
     res.send('Hora Atual: ' + hora + ":" + minuto);
 })
 
-app.get('/saudacao', (req, res) => {
+app.get('/saudacao/:nome', (req, res) => {
 
-    res.send("Olá, " + req.query.nome)
+    res.send("Olá, " + req.params.nome)
 })
 console.log("Servidor Rodando na porta 3000")
 app.listen(3000)
