@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Enquete</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 700px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+            padding: 30px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: black;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        
+        .total-votos {
+            text-align: center;
+            color: black;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        
+        .resultado {
+            margin: 25px 0;
+            padding: 20px;
+            border: 2px solid blue;
+            border-radius: 10px;
+            background-color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .resultado:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(54, 54, 54, 0.5);
+        }
+        
+        .materia-titulo {
+            color: black;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .barra-container {
+            height: 30px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .barra {
+            height: 100%;
+            background-color: blue;
+            border-radius: 5px;
+            transition: width 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            min-width: 40px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .votos-count {
+            color: black;
+        }
+        
+        .percentage {
+            color: blue;
+        }
+        
+        .voltar-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #6c757d;
+            background-color: white;
+            color: #6c757d;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .voltar-btn:hover {
+            background-color: #6c757d;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(77, 76, 76, 0.5);
+        }
+        
+        .vencedor {
+            border-color: green;
+            background-color: #f9fff9;
+        }
+        
+        .vencedor .barra {
+            background-color: green;
+        }
+        
+        .vencedor .materia-titulo::after {
+            content: " 🏆";
+        }
+        
+        /* Garantir que as barras tenham largura mínima para texto visível */
+        .barra[style*="width: 0%"] {
+            min-width: 0;
+            padding-right: 0;
+        }
+        
+        .barra[style*="width: 0%"]::after {
+            content: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resultados da Enquete</h1>
+        <p class="total-votos">Total de votos: <strong><%= totalVotos %></strong></p>
+        
+        <div class="resultado <%= votos.microcontroladores >= Math.max(votos.tecnicas_programacao, votos.programacao_web) && votos.microcontroladores > 0 ? 'vencedor' : '' %>">
+            <h3 class="materia-titulo">Microcontroladores</h3>
+            <div class="barra-container">
+                <div class="barra" style="width: <%= totalVotos > 0 ? (votos.microcontroladores / totalVotos * 100) : 0 %>%;">
+                    <%= totalVotos > 0 ? ((votos.microcontroladores / totalVotos * 100).toFixed(1)) : 0 %>%
+                </div>
+            </div>
+            <div class="stats">
+                <span class="votos-count"><%= votos.microcontroladores %> votos</span>
+                <span class="percentage"><%= totalVotos > 0 ? ((votos.microcontroladores / totalVotos * 100).toFixed(1)) : 0 %>%</span>
+            </div>
+        </div>
+        
+        <div class="resultado <%= votos.tecnicas_programacao >= Math.max(votos.microcontroladores, votos.programacao_web) && votos.tecnicas_programacao > 0 ? 'vencedor' : '' %>">
+            <h3 class="materia-titulo">Técnicas de Programação 1</h3>
+            <div class="barra-container">
+                <div class="barra" style="width: <%= totalVotos > 0 ? (votos.tecnicas_programacao / totalVotos * 100) : 0 %>%;">
+                    <%= totalVotos > 0 ? ((votos.tecnicas_programacao / totalVotos * 100).toFixed(1)) : 0 %>%
+                </div>
+            </div>
+            <div class="stats">
+                <span class="votos-count"><%= votos.tecnicas_programacao %> votos</span>
+                <span class="percentage"><%= totalVotos > 0 ? ((votos.tecnicas_programacao / totalVotos * 100).toFixed(1)) : 0 %>%</span>
+            </div>
+        </div>
+        
+        <div class="resultado <%= votos.programacao_web >= Math.max(votos.microcontroladores, votos.tecnicas_programacao) && votos.programacao_web > 0 ? 'vencedor' : '' %>">
+            <h3 class="materia-titulo">Programação Web</h3>
+            <div class="barra-container">
+                <div class="barra" style="width: <%= totalVotos > 0 ? (votos.programacao_web / totalVotos * 100) : 0 %>%;">
+                    <%= totalVotos > 0 ? ((votos.programacao_web / totalVotos * 100).toFixed(1)) : 0 %>%
+                </div>
+            </div>
+            <div class="stats">
+                <span class="votos-count"><%= votos.programacao_web %> votos</span>
+                <span class="percentage"><%= totalVotos > 0 ? ((votos.programacao_web / totalVotos * 100).toFixed(1)) : 0 %>%</span>
+            </div>
+        </div>
+        
+        <a href="/" class="voltar-btn">Voltar para Votação</a>
+    </div>
+</body>
+</html>
