@@ -5,131 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enquete - Matérias</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
             font-family: Arial, sans-serif;
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             padding: 20px;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 600px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px black;
-            padding: 30px;
+            max-width: 500px;
+            margin: 0 auto;
         }
         
         h1 {
             text-align: center;
-            color: black;
             margin-bottom: 10px;
-            font-size: 2em;
         }
         
         h2 {
             text-align: center;
-            color: black;
-            margin-bottom: 30px;
-            font-size: 1.3em;
+            margin-bottom: 20px;
             font-weight: normal;
-        }
-        
-        fieldset {
-            border: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .botoes-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
         }
         
         .materia-btn {
             width: 100%;
-            padding: 18px;
-            border-radius: 10px;
-            border: 2px solid blue;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #007bff;
             background-color: white;
-            color: blue;
-            font-size: 16px;
-            font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .materia-btn:hover {
-            background-color: blue;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 3px 10px rgb(54, 54, 54);
         }
         
         .materia-btn.selecionado {
-            background-color: blue;
+            background-color: #007bff;
             color: white;
-            border-color: blue;
         }
         
         .submit-btn {
             width: 100%;
-            padding: 18px;
-            border-radius: 10px;
-            border: none;
-            background-color: green;
+            padding: 12px;
+            margin: 15px 0;
+            background-color: #28a745;
             color: white;
-            font-size: 18px;
-            font-weight: bold;
+            border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
-        }
-        
-        .submit-btn:hover:not(:disabled) {
-            background-color: green;
-            transform: translateY(-2px);
-            box-shadow: 0 3px 10px rgba(40,167,69,0.3);
         }
         
         .submit-btn:disabled {
-            background-color: #6c757d;
+            background-color: #ccc;
             cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
         }
         
         .results-btn {
-            width: 100%;
-            padding: 15px;
-            border-radius: 10px;
-            border: 2px solid gray;
-            background-color: white;
-            color: gray;
-            font-size: 16px;
-            text-decoration: none;
-            text-align: center;
             display: block;
-            transition: all 0.3s ease;
-        }
-        
-        .results-btn:hover {
-            background-color: gray;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 3px 10px rgb(77, 76, 76);
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #6c757d;
+            color: #6c757d;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -139,25 +68,23 @@
         <h2>Escolha sua matéria favorita</h2>
         
         <form action="/votar" method="post">
-            <fieldset>
-                <div class="botoes-container">
-                    <button type="button" class="materia-btn" onclick="selecionarMateria('microcontroladores', this)">
-                        Microcontroladores
-                    </button>
-                    <button type="button" class="materia-btn" onclick="selecionarMateria('tecnicas_programacao', this)">
-                        Técnicas de Programação 1
-                    </button>
-                    <button type="button" class="materia-btn" onclick="selecionarMateria('programacao_web', this)">
-                        Programação Web
-                    </button>
-                </div>
-                
-                <input type="hidden" name="voto" id="votoInput">
-                
-                <button type="submit" class="submit-btn" id="submitBtn" disabled>
-                    Enviar Voto
+            <div>
+                <button type="button" class="materia-btn" onclick="selecionarMateria('microcontroladores', this)">
+                    Microcontroladores
                 </button>
-            </fieldset>
+                <button type="button" class="materia-btn" onclick="selecionarMateria('tecnicas_programacao', this)">
+                    Técnicas de Programação 1
+                </button>
+                <button type="button" class="materia-btn" onclick="selecionarMateria('programacao_web', this)">
+                    Programação Web
+                </button>
+            </div>
+            
+            <input type="hidden" name="voto" id="votoInput">
+            
+            <button type="submit" class="submit-btn" id="submitBtn" disabled>
+                Enviar Voto
+            </button>
         </form>
         
         <a href="/resultado" class="results-btn">
@@ -168,16 +95,9 @@
     <script>
         function selecionarMateria(materia, botao) {
             const botoes = document.querySelectorAll('.materia-btn');
-            botoes.forEach(b => {
-                b.classList.remove('selecionado');
-                b.style.backgroundColor = 'white';
-                b.style.color = '#007bff';
-            });
+            botoes.forEach(b => b.classList.remove('selecionado'));
 
             botao.classList.add('selecionado');
-            botao.style.backgroundColor = '#0056b3';
-            botao.style.color = 'white';
-
             document.getElementById('votoInput').value = materia;
             document.getElementById('submitBtn').disabled = false;
         }
