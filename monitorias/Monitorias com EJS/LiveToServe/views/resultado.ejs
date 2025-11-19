@@ -5,148 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados da Enquete</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
             font-family: Arial, sans-serif;
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             padding: 20px;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 700px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
-            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         h1 {
             text-align: center;
-            color: black;
             margin-bottom: 10px;
-            font-size: 2em;
         }
         
         .total-votos {
             text-align: center;
-            color: black;
-            margin-bottom: 30px;
-            font-size: 1.2em;
+            margin-bottom: 20px;
         }
         
         .resultado {
-            margin: 25px 0;
-            padding: 20px;
-            border: 2px solid blue;
-            border-radius: 10px;
-            background-color: white;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .resultado:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 3px 10px rgba(54, 54, 54, 0.5);
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #007bff;
         }
         
         .materia-titulo {
-            color: black;
-            margin-bottom: 15px;
-            font-size: 1.3em;
+            margin-bottom: 10px;
         }
         
         .barra-container {
-            height: 30px;
+            height: 25px;
             background-color: #f0f0f0;
-            border-radius: 5px;
-            margin: 10px 0;
-            overflow: hidden;
+            margin: 8px 0;
         }
         
         .barra {
             height: 100%;
-            background-color: blue;
-            border-radius: 5px;
-            transition: width 0.8s ease-in-out;
+            background-color: #007bff;
+            padding-right: 5px;
+            color: white;
+            font-size: 0.8em;
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            padding-right: 10px;
-            color: white;
-            font-weight: bold;
-            font-size: 0.9em;
-            min-width: 40px;
         }
         
         .stats {
             display: flex;
             justify-content: space-between;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        
-        .votos-count {
-            color: black;
-        }
-        
-        .percentage {
-            color: blue;
+            margin-top: 5px;
+            font-size: 0.9em;
         }
         
         .voltar-btn {
             display: block;
-            width: 100%;
-            padding: 15px;
-            border-radius: 10px;
-            border: 2px solid #6c757d;
-            background-color: white;
-            color: #6c757d;
-            font-size: 16px;
-            text-decoration: none;
             text-align: center;
+            padding: 10px;
+            border: 1px solid #6c757d;
+            color: #6c757d;
+            text-decoration: none;
             margin-top: 20px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        
-        .voltar-btn:hover {
-            background-color: #6c757d;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 3px 10px rgba(77, 76, 76, 0.5);
         }
         
         .vencedor {
-            border-color: green;
-            background-color: #f9fff9;
+            border-color: #28a745;
+            background-color: #f8fff8;
         }
         
         .vencedor .barra {
-            background-color: green;
-        }
-        
-        .vencedor .materia-titulo::after {
-            content: " 🏆";
-        }
-        
-        /* Garantir que as barras tenham largura mínima para texto visível */
-        .barra[style*="width: 0%"] {
-            min-width: 0;
-            padding-right: 0;
-        }
-        
-        .barra[style*="width: 0%"]::after {
-            content: none;
+            background-color: #28a745;
         }
     </style>
 </head>
@@ -163,8 +89,8 @@
                 </div>
             </div>
             <div class="stats">
-                <span class="votos-count"><%= votos.microcontroladores %> votos</span>
-                <span class="percentage"><%= totalVotos > 0 ? ((votos.microcontroladores / totalVotos * 100).toFixed(1)) : 0 %>%</span>
+                <span><%= votos.microcontroladores %> votos</span>
+                <span><%= totalVotos > 0 ? ((votos.microcontroladores / totalVotos * 100).toFixed(1)) : 0 %>%</span>
             </div>
         </div>
         
@@ -176,8 +102,8 @@
                 </div>
             </div>
             <div class="stats">
-                <span class="votos-count"><%= votos.tecnicas_programacao %> votos</span>
-                <span class="percentage"><%= totalVotos > 0 ? ((votos.tecnicas_programacao / totalVotos * 100).toFixed(1)) : 0 %>%</span>
+                <span><%= votos.tecnicas_programacao %> votos</span>
+                <span><%= totalVotos > 0 ? ((votos.tecnicas_programacao / totalVotos * 100).toFixed(1)) : 0 %>%</span>
             </div>
         </div>
         
@@ -189,8 +115,8 @@
                 </div>
             </div>
             <div class="stats">
-                <span class="votos-count"><%= votos.programacao_web %> votos</span>
-                <span class="percentage"><%= totalVotos > 0 ? ((votos.programacao_web / totalVotos * 100).toFixed(1)) : 0 %>%</span>
+                <span><%= votos.programacao_web %> votos</span>
+                <span><%= totalVotos > 0 ? ((votos.programacao_web / totalVotos * 100).toFixed(1)) : 0 %>%</span>
             </div>
         </div>
         
