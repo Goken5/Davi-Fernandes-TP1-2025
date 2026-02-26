@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos · Receitas Caseiras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <style>
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+        .receita-badge {
+            background: rgba(255, 193, 7, 0.9);
+            color: #000;
+            font-weight: 600;
+        }
+        .navbar {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<section id="pagina-fotos">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-camera-fill me-2"></i><strong>Receitas em Foco</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFotos">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarFotos">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.ejs"><i class="bi bi-house-door"></i> Index</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.ejs"><i class="bi bi-envelope"></i> Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="detalhes.ejs"><i class="bi bi-info-circle"></i> Detalhes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="receitas.ejs"><i class="bi bi-book"></i> Receitas</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="dropdownFotos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-images"></i> Fotos
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownFotos">
+                            <li><a class="dropdown-item" href="#carrosel-pratos"><i class="bi bi-star-fill text-warning"></i> Pratos principais</a></li>
+                            <li><a class="dropdown-item" href="#carrosel-doces"><i class="bi bi-cake-fill text-danger"></i> Doces & Sobremesas</a></li>
+                            <li><a class="dropdown-item" href="#carrosel-massas"><i class="bi bi-egg-fill text-warning"></i> Massas</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#galeria-completa"><i class="bi bi-grid-3x3-gap-fill"></i> Galeria completa</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold text-danger">
+                <i class="bi bi-camera-fill me-2"></i>Fotos de dar água na boca
+            </h1>
+            <p class="lead text-muted">Pratos prontos, ingredientes frescos e aquele visual que faz sucesso!</p>
+        </div>
+
+        <div id="carrosel-pratos" class="carousel slide carousel-fade shadow-lg rounded-4 overflow-hidden mb-5" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carrosel-pratos" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carrosel-pratos" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carrosel-pratos" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&h=500&fit=crop" class="d-block w-100" alt="Macarrão a Bolonhesa">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-60 rounded-3 p-4">
+                        <span class="badge bg-warning text-dark mb-2 fs-6">🔥 PRATO MAIS PEDIDO</span>
+                        <h3 class="text-white">Macarrão à Bolonhesa</h3>
+                        <p class="text-white fs-5">Molho encorpado, carne moída e muito queijo parmesão.</p>
+                        <a href="receitas.html#macarrao" class="btn btn-warning btn-sm">Ver receita</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1604909052743-94e838986d24?w=1200&h=500&fit=crop" class="d-block w-100" alt="Risoto de Camarão">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-60 rounded-3 p-4">
+                        <span class="badge bg-info text-dark mb-2 fs-6">🦐 ESPECIALIDADE</span>
+                        <h3 class="text-white">Risoto de Camarão</h3>
+                        <p class="text-white fs-5">Cremoso, com camarões grelhados e toque de limão siciliano.</p>
+                        <a href="receitas.html#risoto" class="btn btn-warning btn-sm">Ver receita</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&h=500&fit=crop" class="d-block w-100" alt="Pizza Margherita">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-60 rounded-3 p-4">
+                        <span class="badge bg-success text-white mb-2 fs-6">🍕 MASSA FRESCA</span>
+                        <h3 class="text-white">Pizza Margherita</h3>
+                        <p class="text-white fs-5">Molho de tomate, mussarela, manjericão e azeite.</p>
+                        <a href="receitas.html#pizza" class="btn btn-warning btn-sm">Ver receita</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carrosel-pratos" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carrosel-pratos" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+
+        <div id="carrosel-doces" class="carousel slide carousel-fade shadow-lg rounded-4 overflow-hidden mb-5" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carrosel-doces" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carrosel-doces" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carrosel-doces" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=1200&h=500&fit=crop" class="d-block w-100" alt="Bolo de Chocolate">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-60 rounded-3 p-4">
+                        <span class="badge bg-warning text-dark mb-2 fs-6">🍰 SUCESSO</span>
+                        <h3 class="text-white">Bolo de Chocolate Recheado</h3>
+                        <p class="text-white fs-5">Massa fofinha, brigadeiro cremoso e granulado.</p>
+                        <a href="receitas.html#bolo" class="btn btn-warning btn-sm">Ver receita</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1200&h=500&fit=crop" class="d-block w-100" alt="Pudim">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-60 rounded-3 p-4">
+                        <span class="badge bg-warning text-dark mb-2 fs-6">🍮 TRADICIONAL</span>
+                        <h3 class="text-white">Pudim de Leite</h3>
+                        <p class="text-white fs-5">Cremoso, com calda de caramelo caseira.</p>
+                        <a href="receitas.html#pudim" class="btn btn-warning btn-sm">Ver receita</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=1200&h=500&fit=crop" class="d-block w-100" alt="Cheesecake">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-60 rounded-3 p-4">
+                        <span class="badge bg-warning text-dark mb-2 fs-6">🇺🇸 CLÁSSICO</span>
+                        <h3 class="text-white">Cheesecake de Frutas Vermelhas</h3>
+                        <p class="text-white fs-5">Base crocante, recheio cremoso e calda de morango.</p>
+                        <a href="receitas.html#cheesecake" class="btn btn-warning btn-sm">Ver receita</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carrosel-doces" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carrosel-doces" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+
+        <div id="carrosel-massas" class="carousel slide carousel-fade shadow-lg rounded-4 overflow-hidden mb-5" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carrosel-massas" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carrosel-massas" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carrosel-massas" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=1200&h=500&fit=crop" class="d-block w-100" alt="Lasanha">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-60 rounded-3 p-4">
+                        <span class="badge bg-warning text-dark mb-2 fs-6">🇮🇹 ITALIANA</span>
+                        <h3 class="text-white">Lasanha à Bolonhesa</h3>
+                        <p class="text-white fs-5">Camadas de massa, molho e queijo gratinado.</p>
+                        <a href="receitas.html#lasanha" class="btn btn-warning btn-sm">Ver receita</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1586779245509-5f429311242f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmhvcXVlfGVufDB8fDB8fHww" class="d-block w-100" alt="Nhoque">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-60 rounded-3 p-4">
+                        <span class="badge bg-warning text-dark mb-2 fs-6">🥔 RECEITA DA VÓ</span>
+                        <h3 class="text-white">Nhoque de Batata</h3>
+                        <p class="text-white fs-5">Molho de tomate fresco e manjericão.</p>
+                        <a href="receitas.html#nhoque" class="btn btn-warning btn-sm">Ver receita</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1611270629569-8b357cb88da9?w=1200&h=500&fit=crop" class="d-block w-100" alt="Espaguete">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-60 rounded-3 p-4">
+                        <span class="badge bg-warning text-dark mb-2 fs-6">🍝 CLÁSSICO</span>
+                        <h3 class="text-white">Espaguete ao Pesto</h3>
+                        <p class="text-white fs-5">Molho de manjericão, pinholes e parmesão.</p>
+                        <a href="receitas.html#espaguete" class="btn btn-warning btn-sm">Ver receita</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carrosel-massas" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carrosel-massas" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+
+        <div id="galeria-completa" class="mt-5">
+            <h2 class="text-center mb-4 fw-bold">
+                <i class="bi bi-grid-3x3-gap-fill text-danger me-2"></i>
+                Galeria de Receitas
+            </h2>
+            
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Frango Assado">
+                        <div class="card-body">
+                            <span class="badge bg-danger mb-2">🔥 POPULAR</span>
+                            <h5 class="card-title">Frango Assado com Batatas</h5>
+                            <p class="card-text text-muted">Tempero especial, crocante por fora e suculento por dentro.</p>
+                            <a href="receitas.html#frango" class="btn btn-outline-danger btn-sm">Ver receita</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=400&fit=crop" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Salmão">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">🐟 LEVE</span>
+                            <h5 class="card-title">Salmão Grelhado</h5>
+                            <p class="card-text text-muted">Com molho de maracujá e legumes salteados.</p>
+                            <a href="receitas.html#salmao" class="btn btn-outline-success btn-sm">Ver receita</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Salada">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">🥗 VEGETARIANO</span>
+                            <h5 class="card-title">Salada Bowl</h5>
+                            <p class="card-text text-muted">Quinoa, abacate, tomate cereja e molho de iogurte.</p>
+                            <a href="receitas.html#salada" class="btn btn-outline-warning btn-sm">Ver receita</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="text-center text-muted mt-5">
+            <i class="bi bi-check-circle-fill text-success me-1"></i>
+            Fotos reais de pratos preparados na nossa cozinha!
+        </p>
+    </div>
+    
+    <hr class="my-5">
+    
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-1"><i class="bi bi-camera-fill me-2"></i> Receitas em Foco - Fotos de dar água na boca</p>
+            <p class="mb-0 small">Todas as imagens são do Unsplash e representam receitas reais do nosso site.</p>
+        </div>
+    </footer>
+</section>
+
+</body>
+</html>

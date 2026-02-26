@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section id="pagina-produtos" class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger mb-4">
+            <div class="container">
+                <a class="navbar-brand" href="#"><i class="bi bi-fire me-2"></i>Receitas</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarProdutos">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarFotos">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.ejs"><i class="bi bi-house-door"></i> Index</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato.ejs"><i class="bi bi-envelope"></i> Contato</a></li>
+                        <li class="nav-item"><a class="nav-link" href="detalhes.ejs"><i class="bi bi-info-circle"></i> Detalhes</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="receitas.ejs"><i class="bi bi-book"></i> Receitas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="fotos.ejs"> <i class="bi bi-images"></i> Fotos</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+        <div class="container">
+            <div class="text-center my-4">
+                <h2>Receitas mais Populares da Semana</h2>
+            </div>
+    
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <img src="assets/Macarrao-a-bolonhesa.jpg" class="card-img-top" alt="Macarrao" style="height: 270px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Macarrão Bolonhesa</h5>
+                            <p class="card-text">Ingredientes: Macarrão, Tomate, Sal, Carne...</p>
+                            <button class="btn btn-danger w-100 mt-2">Acessar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <img src="assets/bolo.jpg" class="card-img-top" alt="Bolo" style="height: 270px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Bolo de Chocolate</h5>
+                            <p class="card-text">Ingredientes: Farinha de trigo, Açúcar...</p>
+                            <button class="btn btn-danger w-100 mt-2">Acessar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <img src="assets/pizza.jpg" class="card-img-top" alt="Pizza" style="height: 270px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Pizza de Calabresa</h5>
+                            <p class="card-text">Ingredientes: Farinha de trigo, Fermento, Sal, Água...</p>
+                            <button class="btn btn-danger w-100 mt-2">Acessar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-5">
+    </section>
+    
+</body>
+</html>

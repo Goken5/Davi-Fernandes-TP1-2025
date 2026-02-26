@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section id="pagina-detalhes">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger mb-4">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="bi bi-camera-fill me-2"></i><strong>Receitas em Foco</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFotos">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarFotos">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.ejs"><i class="bi bi-house-door"></i> Index</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato.ejs"><i class="bi bi-envelope"></i> Contato</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="detalhes.ejs"><i class="bi bi-info-circle"></i> Detalhes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="receitas.ejs"><i class="bi bi-book"></i> Receitas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="fotos.ejs"> <i class="bi bi-images"></i> Fotos</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h2 class="mb-4">Especificações do Curso</h2>
+                    <div class="list-group mb-5 shadow-sm">
+                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                            <i class="bi bi-book fs-3"></i>
+                            <div>
+                                <h6 class="mb-0">Grande quantidade de Material de Estudo</h6>
+                                <p class="mb-0 opacity-75">Livros de Receitas, técnicas, etc.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+                            <i class="bi bi-broadcast fs-3"></i>
+                            <div>
+                                <h6 class="mb-0">Profissionais confiáveis e com bom portifólio</h6>
+                                <p class="mb-0 opacity-75">Nutricionistas com chat aberto 24/7.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+                            <i class="bi bi-calendar-date fs-3"></i>
+                            <div>
+                                <h6 class="mb-0">Receitas o tempo todo</h6>
+                                <p class="mb-0 opacity-75">Suporte para novas receitas, adaptação de Receitas, modificações, etc.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h4>Planos: </h4>
+                    <div class="accordion mt-3" id="accordionDetalhes">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#detalheUm">
+                                    R$29,90 - Plano Básico
+                                </button>
+                            </h2>
+                            <div id="detalheUm" class="accordion-collapse collapse" data-bs-parent="#accordionDetalhes">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> 1 usuário</li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Mais de 100 técnicas</li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Receitas novas todos os dias</li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Suporte 24/7</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#detalheTres">
+                                    R$49,90 - Plano Duo
+                                </button>
+                            </h2>
+                            <div id="detalheTres" class="accordion-collapse collapse" data-bs-parent="#accordionDetalhes">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> 2 usuários </li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Mais de 100 técnicas</li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Receitas novas todos os dias</li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Suporte 24/7</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#detalheDois">
+                                    R$39,90 - Plano Premium
+                                </button>
+                            </h2>
+                            <div id="detalheDois" class="accordion-collapse collapse" data-bs-parent="#accordionDetalhes">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> 1 usuário </li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Acesso a todas as téncnicas </li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Acesso às receitas logo em seu lançamento </li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Criação de receitas com IA </li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Suporte 24/7 </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#detalheQuatro">
+                                    R$59,90 - Plano Duo Premium
+                                </button>
+                            </h2>
+                            <div id="detalheQuatro" class="accordion-collapse collapse" data-bs-parent="#accordionDetalhes">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> 2 usuários </li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Acesso a todas as técnicas </li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Acesso às receitas logo em seu lançamento </li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Criação de receitas com IA </li>
+                                        <li><i class="bi bi-check-circle-fill text-success"></i> Suporte 24/7 </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-5">
+    </section>
+</body>
+</html>
