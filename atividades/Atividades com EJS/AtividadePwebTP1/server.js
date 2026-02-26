@@ -1,4 +1,4 @@
-const port = 8080;
+const port = 4000;
 
 const express = require('express');
 const fs = require('fs').promises;
@@ -6,7 +6,7 @@ const fs = require('fs').promises;
 const app = express();
 
 app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded());
 
 app.get("/", (req, res) => {
     res.render("index");
@@ -23,18 +23,17 @@ app.get("/detalhes", (req, res) => {
 app.get("/contato", (req, res) => {
     res.render("contato");
 });
-app.post("/perguntas", (req, res) => {
-    async function appendToFile() {
-        try{
-            const dados = req.body;
-            await fs.appendFile('app.log', JSON.stringify(dados) + '\n', 'utf-8');
-            console.log("Deu bom");
-        } catch(err){
-            console.error("Deu ruim", err);
-        }
+app.post("/perguntas", async(req, res) => {
+    console.log(req)
+    try{
+        const dados = req.body;
+        console.log(dados)
+        await fs.appendFile('app.json', JSON.stringify(dados) + '\n', 'utf-8');
+        console.log("Deu bom", { ...dados });
+    } catch(err){
+        console.error("Deu ruim", err);
     }
-    appendToFile()
-    res.send("Resposta Recebida!");
+    res.send("Pergunta Recebida!");
 });
 app.listen(port, () => {
     console.log(`Servidor funcionando na porta: ${port}`);
