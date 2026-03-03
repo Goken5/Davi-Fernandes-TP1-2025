@@ -11,6 +11,9 @@ app.use(express.urlencoded());
 app.get("/", (req, res) => {
     res.render("index");
 });
+app.get("/index", (req, res) => {
+    res.render("index");
+});
 app.get("/receitas", (req, res) => {
     res.render("receitas");
 });
