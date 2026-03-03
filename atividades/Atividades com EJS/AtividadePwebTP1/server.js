@@ -33,7 +33,25 @@ app.post("/perguntas", async(req, res) => {
     } catch(err){
         console.error("Deu ruim", err);
     }
-    res.send("Pergunta Recebida!");
+    res.redirect("/perguntas")
+});
+app.get("/perguntas", async (req, res) => {
+    try {
+        // lê o arquivo inteiro como texto
+        const conteudo = await fs.readFile("app.json", "utf-8");
+
+        // quebra por linhas e transforma cada linha em JSON
+        const linhas = conteudo.trim().split("\n");
+
+        // vetor final com os objetos convertidos
+        const dados = linhas.map(linha => JSON.parse(linha));
+
+        // renderiza o EJS e passa os dados
+        res.render("perguntas", { dados });
+    } catch (err) {
+        console.error("Erro ao ler o arquivo", err);
+        res.send("Erro ao carregar perguntas");
+    }
 });
 app.listen(port, () => {
     console.log(`Servidor funcionando na porta: ${port}`);
